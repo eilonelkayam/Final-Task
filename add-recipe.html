@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>הוספת מתכון - מתכונים בקליק</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">מתכונים בקליק</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">דף הבית</a></li>
+                <li><a href="advanced-search.html">חיפוש מתקדם</a></li>
+                <li><a href="add-recipe.html">הוסף מתכון</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="form-container">
+        <h1>שתף מתכון חדש</h1>
+        <form id="recipe-form" novalidate>
+            <div class="form-group">
+                <label for="recipe-name">שם המתכון:</label>
+                <input type="text" id="recipe-name" name="recipe-name" placeholder="למשל: פסטה ברוטב ורוד">
+                <span class="error-msg" id="name-error"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="cuisine">סוג מטבח:</label>
+                <select id="cuisine" name="cuisine">
+                    <option value="">בחר סוג מטבח</option>
+                    <option value="italian">איטלקי</option>
+                    <option value="asian">אסייתי</option>
+                    <option value="mediterranean">ים תיכוני</option>
+                    <option value="dessert">קינוחים</option>
+                </select>
+                <span class="error-msg" id="cuisine-error"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="ingredients">מרכיבים (רשום כל מרכיב בשורה חדשה):</label>
+                <textarea id="ingredients" name="ingredients" rows="4" placeholder="1 כוס קמח..."></textarea>
+                <span class="error-msg" id="ingredients-error"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="instructions">הוראות הכנה:</label>
+                <textarea id="instructions" name="instructions" rows="4" placeholder="שלב 1: מחממים תנור..."></textarea>
+                <span class="error-msg" id="instructions-error"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="image-url">קישור לתמונת המנה:</label>
+                <input type="url" id="image-url" name="image-url" placeholder="https://example.com/image.jpg">
+                <p style="font-size: 0.8rem; color: #666;">או העלה קובץ:</p>
+                <input type="file" id="image-file" name="image-file" accept="image/*">
+            </div>
+
+            <div class="form-group">
+                <label for="chef-email">אימייל השף:</label>
+                <input type="email" id="chef-email" name="chef-email" placeholder="chef@example.com">
+                <span class="error-msg" id="email-error"></span>
+            </div>
+
+            <button type="submit" id="submit-btn">פרסם מתכון באתר</button>
+            <div id="form-feedback"></div>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 כל הזכויות שמורות - פרויקט WEB</p>
+    </footer>
+
+    <script src="js/form-validation.js"></script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>חיפוש מתקדם - מתכונים בקליק</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+    <header>
+        <div class="logo">מתכונים בקליק</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">דף הבית</a></li>
+                <li><a href="advanced-search.html" title="אתה כבר כאן">חיפוש מתקדם</a></li>
+                <li><a href="add-recipe.html">הוסף מתכון</a></li>
+                <li><a href="#" title="העמוד טרם נבנה">התחברות</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="advanced-container">
+        <aside class="filter-sidebar">
+            <h2>סינון מתכונים</h2>
+            <form id="filter-form">
+                <div class="filter-group">
+                    <label>זמן הכנה מקסימלי:</label>
+                    <select id="time-filter">
+                        <option value="all">הכל</option>
+                        <option value="20">עד 20 דקות</option>
+                        <option value="40">עד 40 דקות</option>
+                        <option value="60">מעל שעה</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label>רמת קושי:</label>
+                    <select id="difficulty-filter">
+                        <option value="all">הכל</option>
+                        <option value="easy">קל</option>
+                        <option value="medium">בינוני</option>
+                        <option value="hard">קשה</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label>סוג מטבח:</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="cuisine" value="italian"> איטלקי</label>
+                        <label><input type="checkbox" name="cuisine" value="asian"> אסייתי</label>
+                        <label><input type="checkbox" name="cuisine" value="mediterranean"> ים תיכוני</label>
+                        <label><input type="checkbox" name="cuisine" value="desert"> קינוחים</label>
+                    </div>
+                </div>
+
+                <button type="button" id="apply-filters-btn">עדכן תוצאות</button>
+            </form>
+        </aside>
+
+        <section class="results-area">
+            <h1>תוצאות החיפוש</h1>
+            <p id="feedback-message">מציג את כל המתכונים (6 תוצאות)</p>
+            
+            <div class="recipe-grid">
+                <article class="recipe-card" data-cuisine="italian" data-time="15" data-difficulty="easy">
+                    <img src="images/pasta.jpg.avif" alt="פסטה">
+                    <div class="recipe-content">
+                        <h3>פסטה ברוטב עגבניות</h3>
+                        <p>זמן הכנה: 15 דק' | קל</p>
+                        <a href="#" class="btn-recipe" title="העמוד טרם נבנה">למתכון המלא</a>                    </div>
+                </article>
+
+                <article class="recipe-card" data-cuisine="mediterranean" data-time="20" data-difficulty="medium">
+                    <img src="images/shakshuka.jpg.avif" alt="שקשוקה">
+                    <div class="recipe-content">
+                        <h3>שקשוקה חריפה</h3>
+                        <p>זמן הכנה: 20 דק' | בינוני</p>
+                        <a href="#" class="btn-recipe" title="העמוד טרם נבנה">למתכון המלא</a>
+                    </div>
+                </article>
+
+                <article class="recipe-card" data-cuisine="desert" data-time="40" data-difficulty="easy">
+                    <img src="images/cookies.jpg.avif" alt="עוגיות">
+                    <div class="recipe-content">
+                        <h3>עוגיות שוקולד צ'יפס</h3>
+                        <p>זמן הכנה: 40 דק' | קל</p>
+                        <a href="#" class="btn-recipe" title="העמוד טרם נבנה">למתכון המלא</a>
+                    </div>
+                </article>
+
+                <article class="recipe-card" data-cuisine="asian" data-time="15" data-difficulty="easy">
+                    <img src="images/papaya-salad.jpg" alt="סלט פפאיה">
+                    <div class="recipe-content">
+                        <h3>סלט פפאיה (סום טאם)</h3>
+                        <p>זמן הכנה: 15 דק' | קל</p>
+                        <a href="recipe-detail.html?id=papaya" class="btn-recipe">למתכון המלא</a>
+                    </div>
+                </article>
+
+                <article class="recipe-card" data-cuisine="asian" data-time="20" data-difficulty="medium">
+                    <img src="images/pad-kra-pao.jpg" alt="פאד קפאו">
+                    <div class="recipe-content">
+                        <h3>פאד קפאו</h3>
+                        <p>זמן הכנה: 20 דק' | בינוני</p>
+                        <a href="#" class="btn-recipe" title="העמוד טרם נבנה">למתכון המלא</a>
+                    </div>
+                </article>
+
+                <article class="recipe-card" data-cuisine="mediterranean" data-time="25" data-difficulty="easy">
+                    <img src="images/ptitim.jpg" alt="פתיתים ונקניקיות">
+                    <div class="recipe-content">
+                        <h3>פתיתים ונקניקיות</h3>
+                        <p>זמן הכנה: 25 דק' | קל</p>
+                       <a href="recipe-detail.html?id=ptitim" class="btn-recipe">למתכון המלא</a>   
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 כל הזכויות שמורות - פרויקט WEB</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
